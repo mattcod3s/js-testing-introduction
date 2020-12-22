@@ -4,8 +4,8 @@
   "description": "An introduction to JS testing",
   "main": "app.js",
   "scripts": {
-    "start": "webpack app.js --mode development --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack app.js --mode development --watchl",
+    "test": "jest --watch"
   },
   "keywords": [
     "js",
@@ -22,7 +22,10 @@
   "author": "Maximilian Schwarzmüller/ Academind GmbH",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^26.6.3",
+    "puppeteer": "^5.5.0",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.11.0"
   }
 }
