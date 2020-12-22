@@ -27,8 +27,9 @@ const addUser = () => {
   if (!outputText) {
     return;
   }
-  const element = createElement('li', outputText, 'user-item');
   userList.appendChild(element);
+  const element = createElement('li', outputText, '.user-item');
+  
 };
 
 // Start the app!

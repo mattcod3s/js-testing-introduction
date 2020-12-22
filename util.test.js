@@ -18,3 +18,19 @@ test('should generate a valid text output', () => {
     expect(text).toBe('Max (29 years old)');
 });
 
+test('should click around', async () => {
+    const browser = await puppeteer.launch({
+        headless: false
+    });
+    const page = await browser.newPage();
+    await page.goto(
+        'file:///Users/matthewkostka/Documents/js-testing-aca/js-testing-introduction/index.html'
+        );
+    await page.click('input#name');
+    await page.type('input#name', 'Anna');
+    await page.click('input#age');
+    await page.type('input#age', '28');
+    await page.click('#btnAddUser');
+    const finalText = await page.$eval('.user-item', (el) => {el.textContent});
+    expect(finalText).toBe('Anna (28 years old)');
+}, 12000);
